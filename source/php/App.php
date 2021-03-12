@@ -123,10 +123,27 @@ class App
             wp_enqueue_script('google-maps-api', '//maps.googleapis.com/maps/api/js?key=' . $googleApiKey . '', array(), '', true);
         }
 
+        wp_register_script(
+            'hyperform',
+            EVENTMANAGERINTEGRATION_URL . '/source/js/vendor/hyperform/hyperform.min.js',
+            [],
+            '0.12.0',
+            true
+        );
         wp_register_script('auto-complete', EVENTMANAGERINTEGRATION_URL . '/source/js/vendor/auto-complete/auto-complete.min.js', 'jquery', false, true);
         wp_enqueue_script('auto-complete');
 
-        wp_register_script('event-integration', EVENTMANAGERINTEGRATION_URL . '/dist/' . Helper\CacheBust::name('js/event-integration-front.js'), 'jquery', false, true);
+        wp_register_script(
+            'event-integration',
+            EVENTMANAGERINTEGRATION_URL . '/dist/' . Helper\CacheBust::name('js/event-integration-front.js'),
+            [
+                'jquery',
+                'jquery-ui-datepicker',
+                'hyperform',
+            ],
+            false,
+            true
+        );
         wp_localize_script('event-integration', 'eventintegration', array(
             'ajaxurl' => admin_url('admin-ajax.php'),
             'apiurl' => get_field('event_api_url', 'option'),
