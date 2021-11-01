@@ -372,7 +372,7 @@ export default (() => {
                         $('.submit-success', eventForm).removeClass('hidden');
                         $('.submit-success .success', eventForm)
                             .empty()
-                            .append('<i class="fa fa-send"></i>Evenemanget har skickats!</li>');
+                            .append('<i class="fa fa-send"></i>Tack för ditt evenemangtips!</li>');
                         Form.prototype.cleanForm(eventForm);
                     } else {
                         console.log(response.data);
