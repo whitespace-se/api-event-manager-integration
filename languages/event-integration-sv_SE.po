@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Event Manager Integration\n"
-"POT-Creation-Date: 2020-03-31 10:20+0200\n"
-"PO-Revision-Date: 2020-03-31 10:21+0200\n"
+"POT-Creation-Date: 2021-11-01 11:28+0100\n"
+"PO-Revision-Date: 2021-11-01 11:29+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 3.0\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: event-manager-integration.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -311,7 +311,7 @@ msgstr "Evenemangskategorier"
 
 #: AcfFields/php/event-form-module.php:1719 AcfFields/php/event-module.php:529
 #: AcfFields/php/event-module.php:720 source/php/Helper/SubmitEvent.php:150
-#: source/php/Module/Event/Event.php:387 source/php/PostTypes/Events.php:337
+#: source/php/Module/Event/Event.php:388 source/php/PostTypes/Events.php:337
 #: source/php/Shortcodes/SingleEvent.php:576 views/submit-form.blade.php:188
 msgid "Tags"
 msgstr "Taggar"
@@ -498,7 +498,7 @@ msgid "Show events from the selected groups."
 msgstr "Visa evenemang inom angivna grupper."
 
 #: AcfFields/php/event-module.php:480 AcfFields/php/event-module.php:693
-#: source/php/Helper/SubmitEvent.php:142 source/php/Module/Event/Event.php:386
+#: source/php/Helper/SubmitEvent.php:142 source/php/Module/Event/Event.php:387
 #: source/php/PostTypes/Events.php:300
 #: source/php/Shortcodes/SingleEvent.php:570 views/submit-form.blade.php:179
 msgid "Categories"
@@ -568,7 +568,7 @@ msgstr "Textsök"
 msgid "Date search"
 msgstr "Datumfiltrering"
 
-#: AcfFields/php/event-module.php:774 source/php/Module/Event/Event.php:388
+#: AcfFields/php/event-module.php:774 source/php/Module/Event/Event.php:389
 #: source/php/Shortcodes/SingleEvent.php:338
 #: source/php/Shortcodes/SingleEvent.php:340
 #: source/php/Shortcodes/SingleEvent.php:342 views/single-event.blade.php:102
@@ -761,6 +761,7 @@ msgid "Import from geographic location"
 msgstr "Importera från platser"
 
 #: AcfFields/php/options.php:273
+#: source/php/Module/SubmitForm/views/formfields.blade.php:451
 msgid "No"
 msgstr "Nej"
 
@@ -957,19 +958,19 @@ msgstr "Inga evenemang hittades."
 msgid "Loading"
 msgstr "Hämtar"
 
-#: source/php/App.php:135
+#: source/php/App.php:152
 msgid "Something went wrong, please try again later."
 msgstr "Något gick fel, vänligen försök igen senare."
 
-#: source/php/App.php:136
+#: source/php/App.php:153
 msgid "The email addresses does not match."
 msgstr "E-postadresserna matchar inte."
 
-#: source/php/App.php:137
+#: source/php/App.php:154
 msgid "You must upload an image."
 msgstr "Du måste ladda upp en bild."
 
-#: source/php/App.php:152
+#: source/php/App.php:169
 msgid "to"
 msgstr "till"
 
@@ -1194,30 +1195,30 @@ msgstr "Evenemang"
 msgid "Outputs a list if upcoming events"
 msgstr ""
 
-#: source/php/Module/Event/Event.php:378
+#: source/php/Module/Event/Event.php:379
 #: source/php/Module/Event/views/event.blade.php:18
 msgid "More events"
 msgstr "Fler evenemang"
 
-#: source/php/Module/Event/Event.php:379
+#: source/php/Module/Event/Event.php:380
 #: source/php/Module/Event/views/partials/list.blade.php:4
 #: source/php/Widget/DisplayEvents.php:56
 msgid "No events found"
 msgstr "Inga evenemang hittades"
 
-#: source/php/Module/Event/Event.php:380
+#: source/php/Module/Event/Event.php:381
 msgid "Next"
 msgstr "Nästa"
 
-#: source/php/Module/Event/Event.php:381
+#: source/php/Module/Event/Event.php:382
 msgid "Previous"
 msgstr "Föregående"
 
-#: source/php/Module/Event/Event.php:382
+#: source/php/Module/Event/Event.php:383
 msgid "Search"
 msgstr "Sök"
 
-#: source/php/Module/Event/Event.php:383
+#: source/php/Module/Event/Event.php:384
 #: source/php/Module/SubmitForm/views/formfields.blade.php:322
 #: source/php/Module/SubmitForm/views/formfields.blade.php:325
 #: source/php/PostTypes/Events.php:141
@@ -1225,21 +1226,21 @@ msgstr "Sök"
 msgid "From"
 msgstr "Från"
 
-#: source/php/Module/Event/Event.php:384
+#: source/php/Module/Event/Event.php:385
 #: source/php/Module/SubmitForm/views/formfields.blade.php:329
 #: source/php/Module/SubmitForm/views/formfields.blade.php:332
 msgid "To"
 msgstr "Till"
 
-#: source/php/Module/Event/Event.php:385
+#: source/php/Module/Event/Event.php:386
 msgid "date"
 msgstr "datum"
 
-#: source/php/Module/Event/Event.php:390
+#: source/php/Module/Event/Event.php:391
 msgid "Filter on events that is targeted for given the age"
 msgstr "Filtrera på evenemang som är riktade till en ålder"
 
-#: source/php/Module/Event/Event.php:393 source/php/PostTypes/Events.php:139
+#: source/php/Module/Event/Event.php:394 source/php/PostTypes/Events.php:139
 #: source/php/PostTypes/Events.php:141 source/php/PostTypes/Events.php:143
 #: source/php/Shortcodes/SingleEvent.php:338
 #: source/php/Shortcodes/SingleEvent.php:340
@@ -1248,7 +1249,7 @@ msgstr "Filtrera på evenemang som är riktade till en ålder"
 msgid "years"
 msgstr "år"
 
-#: source/php/Module/Event/Event.php:394
+#: source/php/Module/Event/Event.php:395
 msgid "Select age"
 msgstr "Välj ålder"
 
@@ -1345,10 +1346,10 @@ msgid "End time"
 msgstr "Sluttid"
 
 #: source/php/Module/SubmitForm/views/formfields.blade.php:107
-#: source/php/Module/SubmitForm/views/formfields.blade.php:185
-#: views/submit-form.blade.php:72 views/submit-form.blade.php:138
-msgid "Add"
-msgstr "Lägg till"
+#, fuzzy
+#| msgid "Add or remove categories"
+msgid "Add more dates"
+msgstr "Lägg till eller ta bort kategorier"
 
 #: source/php/Module/SubmitForm/views/formfields.blade.php:118
 #: views/submit-form.blade.php:82
@@ -1432,6 +1433,11 @@ msgstr "Evenemanget inträffar löpande fr.o.m. detta datum"
 msgid "When the recurring event period ends"
 msgstr "Evenemanget inträffar löpande t.o.m. detta datum"
 
+#: source/php/Module/SubmitForm/views/formfields.blade.php:185
+#: views/submit-form.blade.php:72 views/submit-form.blade.php:138
+msgid "Add"
+msgstr "Lägg till"
+
 #: source/php/Module/SubmitForm/views/formfields.blade.php:375
 msgid "Elevator/ramp"
 msgstr "Hiss/ramp"
@@ -1455,6 +1461,10 @@ msgstr ""
 #: source/php/Module/SubmitForm/views/formfields.blade.php:443
 msgid "Are there identifiable persons on the image/images?"
 msgstr "Finns det identifierbara personer på bilden/bilderna?"
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:448
+msgid "Yes"
+msgstr "Ja"
 
 #: source/php/Module/SubmitForm/views/formfields.blade.php:459
 msgid ""
@@ -2095,9 +2105,6 @@ msgstr ""
 
 #~ msgid "Internal"
 #~ msgstr "Intern"
-
-#~ msgid "Yes"
-#~ msgstr "Ja"
 
 #~ msgid ""
 #~ "They have approved that the image is used to promote this event and has "

@@ -104,7 +104,7 @@
                     </div>
                     <div class="form-group">
                         <button class="btn btn btn-primary btn-sm add-occurance"><i class="pricon pricon-plus-o"></i>
-                            <?php _e('Add', 'event-integration'); ?>
+                            <?php _e('Add more dates', 'event-integration'); ?>
                         </button>
                     </div>
                 </div>
