@@ -55,6 +55,69 @@ class App
 
         // Add view paths
         add_filter('Municipio/blade/view_paths', array($this, 'addViewPaths'), 2, 1);
+
+        // Remove default WP localization of datepicker
+        remove_action('wp_enqueue_scripts', 'wp_localize_jquery_ui_datepicker', 1000);
+
+        // Re-add default WP localization of datepicker but as JS object instead
+        add_action('wp_enqueue_scripts', array($this, 'addLocalizedDatepickerDefaults'), 10, 0);
+
+    }
+
+     /**
+     * Outputs localized datepicker defaults as JS object for use in script
+     * @return void
+     */
+    public function addLocalizedDatepickerDefaults() {
+        global $wp_locale;
+
+        // Convert the PHP date format into jQuery UI's format.
+        $datepicker_date_format = str_replace(
+            array(
+                'd',
+                'j',
+                'l',
+                'z', // Day.
+                'F',
+                'M',
+                'n',
+                'm', // Month.
+                'Y',
+                'y', // Year.
+            ),
+            array(
+                'dd',
+                'd',
+                'DD',
+                'o',
+                'MM',
+                'M',
+                'm',
+                'mm',
+                'yy',
+                'y',
+            ),
+            get_option( 'date_format' )
+        );
+
+        $datepicker_defaults = wp_json_encode(
+            array(
+                'closeText'       => __( 'Close' ),
+                'currentText'     => __( 'Today' ),
+                'monthNames'      => array_values( $wp_locale->month ),
+                'monthNamesShort' => array_values( $wp_locale->month_abbrev ),
+                'nextText'        => __( 'Next' ),
+                'prevText'        => __( 'Previous' ),
+                'dayNames'        => array_values( $wp_locale->weekday ),
+                'dayNamesShort'   => array_values( $wp_locale->weekday_abbrev ),
+                'dayNamesMin'     => array_values( $wp_locale->weekday_initial ),
+                'dateFormat'      => $datepicker_date_format,
+                'firstDay'        => absint( get_option( 'start_of_week' ) ),
+                'isRTL'           => $wp_locale->is_rtl(),
+            )
+        );
+
+        wp_add_inline_script( 'jquery-ui-datepicker', "window.datepickerLocalizationDefaults = $datepicker_defaults;" );
     }
 
     /**
@@ -144,6 +207,7 @@ class App
             false,
             true
         );
+
         wp_localize_script('event-integration', 'eventintegration', array(
             'ajaxurl' => admin_url('admin-ajax.php'),
             'apiurl' => get_field('event_api_url', 'option'),

@@ -7,6 +7,9 @@ export default (() => {
   EventManagerIntegration.Event = EventManagerIntegration.Event || {};
 
   EventManagerIntegration.Event.Form = (function ($) {
+    if (window.datepickerLocalizationDefaults) {
+      $.datepicker.setDefaults(window.datepickerLocalizationDefaults);
+    }
     function Form() {
       document.addEventListener("DOMContentLoaded", (event) => {
         $(".submit-event").each(
