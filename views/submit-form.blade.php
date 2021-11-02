@@ -41,7 +41,7 @@
                      style="border-bottom:1px solid #ddd;">
                     <div class="form-group">
                         <label for="start_date"><?php _e('Start date', 'event-integration'); ?> <span class="text-danger">*</span></label>
-                        <input type="text" name="start_date" placeholder="<?php _e('Date', 'event-integration'); ?>" value="" class="datepicker" required="required">
+                        <input type="text" name="start_date" placeholder="<?php _e('Date', 'event-integration'); ?>" value="" class="date-picker" required="required">
                     </div>
                     <div class="form-group form-horizontal">
                         <label for="start_time_h"><?php _e('Start time', 'event-integration'); ?> <span class="text-danger">*</span></label>
@@ -55,7 +55,7 @@
                     </div>
                     <div class="form-group">
                         <label for="end_date"><?php _e('End date', 'event-integration'); ?> <span class="text-danger">*</span></label>
-                        <input type="text" name="end_date" placeholder="<?php _e('Date', 'event-integration'); ?>" value="" class="datepicker" required="required">
+                        <input type="text" name="end_date" placeholder="<?php _e('Date', 'event-integration'); ?>" value="" class="date-picker" required="required">
                     </div>
                     <div class="form-group form-horizontal">
                         <label for="end_time_h"><?php _e('End time', 'event-integration'); ?> <span class="text-danger">*</span></label>
@@ -124,13 +124,13 @@
                         <label for="recurring_start_d"><?php _e('Start date', 'event-integration'); ?> <span class="text-danger">*</span></label>
                         <small><?php _e('When the recurring event period starts', 'event-integration'); ?></small>
                         <input type="text" name="recurring_start_d" placeholder="<?php _e('Start date', 'event-integration'); ?>" value=""
-                               class="datepicker">
+                               class="date-picker">
                     </div>
                     <div class="form-group">
                         <label for="recurring_end_d"><?php _e('End date', 'event-integration'); ?> <span class="text-danger">*</span></label>
                         <small><?php _e('When the recurring event period ends', 'event-integration'); ?></small>
                         <input type="text" name="recurring_end_d" placeholder="<?php _e('End date', 'event-integration'); ?>" value=""
-                               class="datepicker">
+                               class="date-picker">
                     </div>
                 </div>
                 <div class="form-group">
