@@ -342,7 +342,7 @@
             @if(!$organizer->hidden_description)
                 <small class="text-dark-gray">{{ $organizer->description }}</small>
             @endif
-            <input id="organizer-selector" autofocus="" type="text" name="q"
+            <input id="organizer-selector" type="text" name="q"
                    placeholder="{{ $organizer->label }}"
                    autocomplete="off">
             <input name="{{ $organizer->name }}" id="{{ $organizer->name }}" type="hidden">
@@ -356,7 +356,7 @@
             @if(!$location->hidden_description)
                 <small class="text-dark-gray">{{ $location->description }}</small>
             @endif
-            <input id="location-selector" autofocus="" type="text" name="q"
+            <input id="location-selector" type="text" name="q"
                    placeholder="{{ $location->label }}"
                    autocomplete="off">
             <input name="{{ $location->name }}" id="{{ $location->name }}" type="hidden">
