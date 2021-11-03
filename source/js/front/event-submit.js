@@ -22,7 +22,7 @@ export default (() => {
 
             this.initHyperform(eventForm);
 
-            this.datePickerSettings();
+            this.initDatepickers();
 
             if (document.getElementById("location") !== null) {
               this.loadPostType($(eventForm), apiUrl, "location");
@@ -594,53 +594,35 @@ export default (() => {
       // Recurring date events
       this.initRecurringEndHourEvent();
       this.initRecurringEndMinuteEvent();
-      // set min and max dates
-      this.datePickerSettings();
+      this.initDatepickers();
     };
 
-    Form.prototype.datePickerSettings = function () {
-      const options = {
-        dateFormat: "yy-mm-dd",
-        minDate: "0",
-        maxDate: "+1y",
-      };
-
-      $("input[name*='start_d'].date-picker")
+    Form.prototype.initDatepickers = function () {
+      $("input.date-picker")
         .datepicker({
-          ...options,
+          dateFormat: "yy-mm-dd",
+          minDate: "0",
+          maxDate: "+1y",
           onClose: function (selectedDate) {
-            $(this)
-              .closest(".occurrence")
-              .find("input[name*='end_d'].date-picker")
-              .datepicker("option", "minDate", selectedDate);
+            if ($(this).is("[name*='start_d']")) {
+              // Set min date on end date
+              $(this)
+                .closest(".occurrence")
+                .find("input[name*='end_d'].date-picker")
+                .datepicker("option", "minDate", selectedDate);
+            }
+
+            if ($(this).is("[name*='end_d']")) {
+              // Set max date on start date
+              $(this)
+                .closest(".occurrence")
+                .find("input[name*='start_d'].date-picker")
+                .datepicker("option", "maxDate", selectedDate);
+            }
 
             this.dispatchEvent(new Event("blur"));
           },
         })
-        .attr(
-          "pattern",
-          "[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])"
-        )
-        .attr("required", true)
-        .attr("type", "text");
-
-      $("input[name*='end_d'].date-picker")
-        .datepicker({
-          ...options,
-          onClose: function (selectedDate) {
-            $(this)
-              .closest(".occurrence")
-              .find("input[name*='start_d'].date-picker")
-              .datepicker("option", "maxDate", selectedDate);
-
-            this.dispatchEvent(new Event("blur"));
-          },
-        })
-        .attr(
-          "pattern",
-          "[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])"
-        )
-        .attr("required", true)
         .attr("type", "text");
 
       document.getElementById("ui-datepicker-div").style = "display: none";
@@ -729,6 +711,7 @@ export default (() => {
           .show()
           .find("input")
           .prop("required", true);
+
         $("#" + id)
           .siblings(".event-occasion")
           .children(".box")
@@ -752,8 +735,6 @@ export default (() => {
               .removeAttr("id")
               .end()
               .insertAfter($occuranceGroup)
-              .find(".datepicker")
-              // .datepicker()
               .end();
 
           // Re init date events
