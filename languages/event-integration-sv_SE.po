@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Event Manager Integration\n"
-"POT-Creation-Date: 2021-11-03 11:35+0100\n"
-"PO-Revision-Date: 2021-11-03 11:36+0100\n"
+"POT-Creation-Date: 2021-11-03 14:24+0100\n"
+"PO-Revision-Date: 2021-11-03 14:25+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv\n"
@@ -761,7 +761,7 @@ msgid "Import from geographic location"
 msgstr "Importera från platser"
 
 #: AcfFields/php/options.php:273
-#: source/php/Module/SubmitForm/views/formfields.blade.php:441
+#: source/php/Module/SubmitForm/views/formfields.blade.php:456
 msgid "No"
 msgstr "Nej"
 
@@ -971,8 +971,8 @@ msgid "Previous"
 msgstr "Föregående"
 
 #: source/php/App.php:158
-#: source/php/Module/SubmitForm/views/formfields.blade.php:385
-#: source/php/Module/SubmitForm/views/formfields.blade.php:401
+#: source/php/Module/SubmitForm/views/formfields.blade.php:399
+#: source/php/Module/SubmitForm/views/formfields.blade.php:416
 #: views/submit-form.blade.php:182 views/submit-form.blade.php:191
 msgid "Loading"
 msgstr "Hämtar"
@@ -992,8 +992,8 @@ msgstr "Du måste ladda upp en bild."
 #: source/php/App.php:219
 #: source/php/Module/SubmitForm/views/formfields.blade.php:68
 #: source/php/Module/SubmitForm/views/formfields.blade.php:85
-#: source/php/Module/SubmitForm/views/formfields.blade.php:165
-#: source/php/Module/SubmitForm/views/formfields.blade.php:170
+#: source/php/Module/SubmitForm/views/formfields.blade.php:167
+#: source/php/Module/SubmitForm/views/formfields.blade.php:174
 msgid "Date must be valid (YYYY-MM-DD)"
 msgstr "Datumet måste vara giltigt (ÅÅÅÅ-MM-DD)"
 
@@ -1005,7 +1005,24 @@ msgstr "Startdatumet kan inte vara efter slutdatumet"
 msgid "End date cannot be before start date"
 msgstr "Slutdatumet kan inte vara före startdatumet"
 
-#: source/php/App.php:236
+#: source/php/App.php:222
+#: source/php/Module/SubmitForm/views/formfields.blade.php:166
+#: source/php/Module/SubmitForm/views/formfields.blade.php:173
+#: source/php/Module/SubmitForm/views/formfields.blade.php:199
+#: source/php/Module/SubmitForm/views/formfields.blade.php:215
+#: source/php/Module/SubmitForm/views/formfields.blade.php:246
+#: source/php/Module/SubmitForm/views/formfields.blade.php:262
+#: source/php/Module/SubmitForm/views/formfields.blade.php:278
+#: source/php/Module/SubmitForm/views/formfields.blade.php:294
+#: source/php/Module/SubmitForm/views/formfields.blade.php:310
+#: source/php/Module/SubmitForm/views/formfields.blade.php:328
+#: source/php/Module/SubmitForm/views/formfields.blade.php:336
+#: source/php/Module/SubmitForm/views/formfields.blade.php:500
+#: source/php/Module/SubmitForm/views/formfields.blade.php:511
+msgid "Please fill out this field"
+msgstr "Fyll i det här fältet"
+
+#: source/php/App.php:237
 msgid "to"
 msgstr "till"
 
@@ -1196,7 +1213,7 @@ msgstr ""
 "respektive tagg."
 
 #: source/php/Helper/SubmitEvent.php:158
-#: source/php/Module/SubmitForm/views/formfields.blade.php:456
+#: source/php/Module/SubmitForm/views/formfields.blade.php:471
 #: views/submit-form.blade.php:197 views/submit-form.blade.php:207
 #: views/submit-form.blade.php:220
 msgid "Upload an image"
@@ -1246,16 +1263,16 @@ msgid "Search"
 msgstr "Sök"
 
 #: source/php/Module/Event/Event.php:384
-#: source/php/Module/SubmitForm/views/formfields.blade.php:312
-#: source/php/Module/SubmitForm/views/formfields.blade.php:315
+#: source/php/Module/SubmitForm/views/formfields.blade.php:323
+#: source/php/Module/SubmitForm/views/formfields.blade.php:326
 #: source/php/PostTypes/Events.php:141
 #: source/php/Shortcodes/SingleEvent.php:340
 msgid "From"
 msgstr "Från"
 
 #: source/php/Module/Event/Event.php:385
-#: source/php/Module/SubmitForm/views/formfields.blade.php:319
-#: source/php/Module/SubmitForm/views/formfields.blade.php:322
+#: source/php/Module/SubmitForm/views/formfields.blade.php:331
+#: source/php/Module/SubmitForm/views/formfields.blade.php:334
 msgid "To"
 msgstr "Till"
 
@@ -1348,7 +1365,7 @@ msgstr "Startdatum"
 #: source/php/Module/SubmitForm/views/formfields.blade.php:68
 #: source/php/Module/SubmitForm/views/formfields.blade.php:85
 #: source/php/Module/SubmitForm/views/formfields.blade.php:165
-#: source/php/Module/SubmitForm/views/formfields.blade.php:170
+#: source/php/Module/SubmitForm/views/formfields.blade.php:172
 msgid "YYYY-MM-DD"
 msgstr ""
 
@@ -1359,7 +1376,7 @@ msgid "Start time"
 msgstr "Starttid"
 
 #: source/php/Module/SubmitForm/views/formfields.blade.php:84
-#: source/php/Module/SubmitForm/views/formfields.blade.php:168
+#: source/php/Module/SubmitForm/views/formfields.blade.php:170
 #: views/submit-form.blade.php:57 views/submit-form.blade.php:130
 #: views/submit-form.blade.php:132
 msgid "End date"
@@ -1452,45 +1469,50 @@ msgstr "Evenemangets sluttid"
 msgid "When the recurring event period starts"
 msgstr "Evenemanget inträffar löpande fr.o.m. detta datum"
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:169
+#: source/php/Module/SubmitForm/views/formfields.blade.php:171
 #: views/submit-form.blade.php:131
 msgid "When the recurring event period ends"
 msgstr "Evenemanget inträffar löpande t.o.m. detta datum"
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:175
+#: source/php/Module/SubmitForm/views/formfields.blade.php:179
 #: views/submit-form.blade.php:72 views/submit-form.blade.php:138
 msgid "Add"
 msgstr "Lägg till"
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:365
+#: source/php/Module/SubmitForm/views/formfields.blade.php:378
 msgid "Elevator/ramp"
 msgstr "Hiss/ramp"
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:369
+#: source/php/Module/SubmitForm/views/formfields.blade.php:382
 msgid "Accessible toilet"
 msgstr "Handikapptoalett"
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:424
+#: source/php/Module/SubmitForm/views/formfields.blade.php:398
+#: source/php/Module/SubmitForm/views/formfields.blade.php:415
+msgid "Select one option in the list"
+msgstr "Välj ett av alternativen från listan"
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:439
 #: views/submit-form.blade.php:211
 msgid "Before you can upload an image, you need to confirm the following terms"
 msgstr ""
 "Innan du kan ladda upp en bild behöver du bekräfta nedanstående punkter"
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:429
+#: source/php/Module/SubmitForm/views/formfields.blade.php:444
 #: views/submit-form.blade.php:213
 msgid "I have the right to use this image to promote this event."
 msgstr ""
 "Jag har rätt att använda denna bild för att marknadsföra detta evenemang."
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:433
+#: source/php/Module/SubmitForm/views/formfields.blade.php:448
 msgid "Are there identifiable persons on the image/images?"
 msgstr "Finns det identifierbara personer på bilden/bilderna?"
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:438
+#: source/php/Module/SubmitForm/views/formfields.blade.php:453
 msgid "Yes"
 msgstr "Ja"
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:449
+#: source/php/Module/SubmitForm/views/formfields.blade.php:464
 msgid ""
 "They have accepted that the image is used to promote this event and have "
 "been informed that after the image has been added to the database, it may "
@@ -1500,28 +1522,33 @@ msgstr ""
 "har informerats om att efter att bilden lagts in i databasen kan komma att "
 "synas i olika kanaler för att marknadsföra evenemanget."
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:467
+#: source/php/Module/SubmitForm/views/formfields.blade.php:482
 #: views/submit-form.blade.php:225
 msgid "Contact details"
 msgstr "Kontaktuppgifter"
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:468
+#: source/php/Module/SubmitForm/views/formfields.blade.php:483
 #: views/submit-form.blade.php:226
 msgid "Enter your contact details below for eventual questions."
 msgstr "Ange dina kontaktuppgifter nedan för eventuella frågor."
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:487
-#: source/php/Module/SubmitForm/views/formfields.blade.php:491
+#: source/php/Module/SubmitForm/views/formfields.blade.php:499
+#: source/php/Module/SubmitForm/views/formfields.blade.php:510
+msgid "Please enter a valid email address"
+msgstr "Ange en giltig e-postadress"
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:504
+#: source/php/Module/SubmitForm/views/formfields.blade.php:508
 #: views/submit-form.blade.php:233 views/submit-form.blade.php:234
 msgid "Repeat email"
 msgstr "Upprepa e-postadress"
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:513
+#: source/php/Module/SubmitForm/views/formfields.blade.php:532
 #: views/submit-form.blade.php:242
 msgid "Done? Click here to submit your event for review."
 msgstr "Klar? Klicka här för att skicka in ditt evenemang för granskning."
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:523
+#: source/php/Module/SubmitForm/views/formfields.blade.php:542
 #: views/submit-form.blade.php:252
 msgid "Send"
 msgstr "Skicka"
