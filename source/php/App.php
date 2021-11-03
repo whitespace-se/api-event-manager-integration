@@ -61,7 +61,6 @@ class App
 
         // Re-add default WP localization of datepicker but as JS object instead
         add_action('wp_enqueue_scripts', array($this, 'addLocalizedDatepickerDefaults'), 10, 0);
-
     }
 
      /**

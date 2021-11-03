@@ -19,7 +19,9 @@ export default (() => {
 
             $("#recurring-event", eventForm).children(".box").hide();
             this.handleEvents($(eventForm), apiUrl);
-            this.hyperformExtensions(eventForm);
+
+            this.initHyperform(eventForm);
+
             this.datePickerSettings();
 
             if (document.getElementById("location") !== null) {
@@ -42,22 +44,74 @@ export default (() => {
       });
     }
 
-    /**
-     * Add custom validations with Hyperform
-     */
-    Form.prototype.hyperformExtensions = function (eventForm) {
-      // Match email addresses
+    Form.prototype.initHyperform = function (eventForm) {
+      hyperform(eventForm);
 
-      if ("start_date" in eventForm) {
-        console.log(eventForm.start_date);
-        hyperform.addValidator(eventForm.start_date, function (element) {
-          console.log(element.value);
+      /**
+       * Add custom validations with Hyperform
+       */
+      // Validate all start dates
+      $("input[name*='start_d'].date-picker").each(function (_, element) {
+        hyperform.addValidator(element, function (element) {
+          if (
+            element.validity.patternMismatch ||
+            element.validity.valueMissing
+          ) {
+            return false;
+          }
 
-          return false;
+          const $associatedEndDate = $(element)
+            .closest(".occurrence")
+            .find("input[name*='end_d'].date-picker");
+
+          if (!$associatedEndDate.val()) {
+            return true;
+          }
+
+          const start = new Date(element.value);
+          const end = new Date($associatedEndDate.val());
+          const valid = !element.value || start <= end;
+
+          element.setCustomValidity(
+            valid ? "" : eventIntegrationFront.start_date_must_be_later
+          );
+
+          return valid;
         });
-      }
+      });
+
+      // Validate all end dates
+      $("input[name*='end_d'].date-picker").each(function (_, element) {
+        hyperform.addValidator(element, function (element) {
+          if (
+            element.validity.patternMismatch ||
+            element.validity.valueMissing
+          ) {
+            return false;
+          }
+
+          const $associatedStartDate = $(element)
+            .closest(".occurrence")
+            .find("input[name*='start_d'].date-picker");
+
+          if (!$associatedStartDate.val()) {
+            return true;
+          }
+
+          const start = new Date(element.value);
+          const end = new Date($associatedStartDate.val());
+          const valid = !element.value || start >= end;
+
+          element.setCustomValidity(
+            valid ? "" : eventIntegrationFront.end_date_must_be_later
+          );
+
+          return valid;
+        });
+      });
 
       if ("submitter_repeat_email" in eventForm) {
+        // Match email addresses
         hyperform.addValidator(
           eventForm.submitter_repeat_email,
           function (element) {
@@ -545,7 +599,7 @@ export default (() => {
     };
 
     Form.prototype.datePickerSettings = function () {
-      const datePickerDefaults = {
+      const options = {
         dateFormat: "yy-mm-dd",
         minDate: "0",
         maxDate: "+1y",
@@ -553,27 +607,42 @@ export default (() => {
 
       $("input[name*='start_d'].date-picker")
         .datepicker({
-          ...datePickerDefaults,
-          onClose: function (selectedDate, instance) {
+          ...options,
+          onClose: function (selectedDate) {
             $(this)
               .closest(".occurrence")
               .find("input[name*='end_d'].date-picker")
               .datepicker("option", "minDate", selectedDate);
+
+            this.dispatchEvent(new Event("blur"));
           },
         })
+        .attr(
+          "pattern",
+          "[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])"
+        )
+        .attr("required", true)
         .attr("type", "text");
 
       $("input[name*='end_d'].date-picker")
         .datepicker({
-          ...datePickerDefaults,
+          ...options,
           onClose: function (selectedDate) {
             $(this)
               .closest(".occurrence")
               .find("input[name*='start_d'].date-picker")
               .datepicker("option", "maxDate", selectedDate);
+
+            this.dispatchEvent(new Event("blur"));
           },
         })
+        .attr(
+          "pattern",
+          "[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])"
+        )
+        .attr("required", true)
         .attr("type", "text");
+
       document.getElementById("ui-datepicker-div").style = "display: none";
     };
 

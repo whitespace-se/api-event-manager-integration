@@ -20,7 +20,8 @@
                    name="{{ $title->name }}"
                    id="{{ $title->name }}"
                    placeholder="{{ $title->label }}"
-                    {{ $title->required ? 'required' : '' }}>
+                    {{ $title->required ? 'required' : '' }}
+                    data-value-missing="<?php _e("Please fill out this field", 'event-integration') ?>.">
         </div>
     @endif
 
@@ -35,7 +36,7 @@
                       rows="5"
                       id="{{ $content->name }} textarea"
                       placeholder="{{ $content->label }}"
-                    {{ $content->required ? 'required' : '' }}></textarea>
+                    {{ $content->required ? 'required' : '' }} data-value-missing="<?php _e("Please fill out this field", 'event-integration') ?>."></textarea>
         </div>
     @endif
 
@@ -64,39 +65,45 @@
                     <div class="form-group occurrence occurance-group-single gutter gutter-bottom"
                          style="border-bottom:1px solid #ddd;">
                         <div class="form-group">
-                            <label for="start_date"><?php _e('Start date', 'event-integration'); ?> <span
-                                        class="text-danger">*</span></label>
-                            <input type="date" name="start_date" placeholder="<?php _e('Date', 'event-integration'); ?>" class="date-picker" required="required">
+                            <label for="start_date"><?php _e('Start date', 'event-integration'); ?> <span class="text-danger">*</span></label>
+                            <input type="date" name="start_date" placeholder="<?php _e("YYYY-MM-DD", 'event-integration'); ?>" class="date-picker" pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])" required="required"
+                                data-value-missing="<?php _e("Please fill out this field", 'event-integration') ?>."
+                                data-pattern-mismatch="<?php _e("Date must be valid (YYYY-MM-DD)", 'event-integration') ?>">
                         </div>
                         <div class="form-group form-horizontal">
                             <label for="start_time_h"><?php _e('Start time', 'event-integration'); ?> <span
                                         class="text-danger">*</span></label>
                             <div class="form-group">
                                 <input type="number" name="start_time_h" placeholder="HH" value="" min="0" max="24"
-                                       required="required">
+                                       required="required"
+                                       data-value-missing="<?php _e("Please fill out this field", 'event-integration') ?>.">
                             </div>
                             <div class="form-group">
                                 <i>: </i><input type="number" name="start_time_m" placeholder="MM" value="" min="0"
                                                 max="59"
-                                                required="required">
+                                                required="required" data-value-missing="<?php _e("Please fill out this field", 'event-integration') ?>.">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="end_date"><?php _e('End date', 'event-integration'); ?> <span
-                                        class="text-danger">*</span></label>
-                            <input type="date" name="end_date" placeholder="<?php _e('Date', 'event-integration'); ?>" class="date-picker" required="required">
+                            <label for="end_date"><?php _e('End date', 'event-integration'); ?> <span class="text-danger">*</span></label>
+                            <input type="date" name="end_date" placeholder="<?php _e("YYYY-MM-DD", 'event-integration'); ?>" class="date-picker" pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])"
+                                required="required"
+                                data-value-missing="<?php _e("Please fill out this field", 'event-integration') ?>."
+                                data-pattern-mismatch="<?php _e("Date must be valid (YYYY-MM-DD)", 'event-integration') ?>">
                         </div>
                         <div class="form-group form-horizontal">
                             <label for="end_time_h"><?php _e('End time', 'event-integration'); ?> <span
                                         class="text-danger">*</span></label>
                             <div class="form-group">
                                 <input type="number" name="end_time_h" placeholder="HH" value="" min="0" max="24"
-                                       required="required">
+                                       required="required"
+                                       data-value-missing="<?php _e("Please fill out this field", 'event-integration') ?>.">
                             </div>
                             <div class="form-group">
                                 <i>: </i><input type="number" name="end_time_m" placeholder="MM" value="" min="0"
                                                 max="59"
-                                                required="required">
+                                                required="required"
+                                                data-value-missing="<?php _e("Please fill out this field", 'event-integration') ?>.">
                             </div>
                         </div>
                     </div>
@@ -162,20 +169,18 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="recurring_start_d"><?php _e('Start date', 'event-integration'); ?> <span
-                                        class="text-danger">*</span></label>
+                            <label for="recurring_start_d"><?php _e('Start date', 'event-integration'); ?> <span class="text-danger">*</span></label>
                             <small><?php _e('When the recurring event period starts', 'event-integration'); ?></small>
-                            <input type="date" name="recurring_start_d"
-                                   placeholder="<?php _e('Start date', 'event-integration'); ?>" value=""
-                                   class="date-picker">
+                            <input type="date" name="recurring_start_d" placeholder="<?php _e("YYYY-MM-DD", 'event-integration'); ?>" value="" class="date-picker"
+                                data-value-missing="<?php _e("Please fill out this field", 'event-integration') ?>."
+                                data-pattern-mismatch="<?php _e("Date must be valid (YYYY-MM-DD)", 'event-integration') ?>.">
                         </div>
                         <div class="form-group">
-                            <label for="recurring_end_d"><?php _e('End date', 'event-integration'); ?> <span
-                                        class="text-danger">*</span></label>
+                            <label for="recurring_end_d"><?php _e('End date', 'event-integration'); ?> <span class="text-danger">*</span></label>
                             <small><?php _e('When the recurring event period ends', 'event-integration'); ?></small>
-                            <input type="date" name="recurring_end_d"
-                                   placeholder="<?php _e('End date', 'event-integration'); ?>" value=""
-                                   class="date-picker">
+                            <input type="date" name="recurring_end_d" placeholder="<?php _e("YYYY-MM-DD", 'event-integration'); ?>" value="" class="date-picker"
+                                data-value-missing="<?php _e("Please fill out this field", 'event-integration') ?>."
+                                data-pattern-mismatch="<?php _e("Date must be valid (YYYY-MM-DD)", 'event-integration') ?>">
                         </div>
                     </div>
                     <div class="form-group">
@@ -199,7 +204,8 @@
                    name="{{ $event_link->name }}"
                    id="{{ $event_link->name }}"
                    placeholder="{{ $event_link->label }}"
-                    {{ $event_link->required ? 'required' : '' }}>
+                    {{ $event_link->required ? 'required' : '' }}
+                    data-value-missing="<?php _e("Please fill out this field", 'event-integration') ?>.">
         </div>
     @endif
 
@@ -214,7 +220,8 @@
                    name="{{ $booking_link->name }}"
                    id="{{ $booking_link->name }}"
                    placeholder="{{ $booking_link->label }}"
-                    {{ $booking_link->required ? 'required' : '' }}>
+                    {{ $booking_link->required ? 'required' : '' }}
+                    data-value-missing="<?php _e("Please fill out this field", 'event-integration') ?>.">
         </div>
     @endif
 
@@ -244,7 +251,8 @@
                    name="{{ $price_student->name }}"
                    id="{{ $price_student->name }}"
                    placeholder="{{ $price_student->label }}"
-                    {{ $price_student->required ? 'required' : '' }}>
+                    {{ $price_student->required ? 'required' : '' }}
+                    data-value-missing="<?php _e("Please fill out this field", 'event-integration') ?>.">
         </div>
     @endif
 
@@ -259,7 +267,8 @@
                    name="{{ $price_children->name }}"
                    id="{{ $price_children->name }}"
                    placeholder="{{ $price_children->label }}"
-                    {{ $price_children->required ? 'required' : '' }}>
+                    {{ $price_children->required ? 'required' : '' }}
+                    data-value-missing="<?php _e("Please fill out this field", 'event-integration') ?>.">
         </div>
     @endif
 
@@ -274,7 +283,8 @@
                    name="{{ $children_age->name }}"
                    id="{{ $children_age->name }}"
                    placeholder="{{ $children_age->label }}"
-                    {{ $children_age->required ? 'required' : '' }}>
+                    {{ $children_age->required ? 'required' : '' }}
+                    data-value-missing="<?php _e("Please fill out this field", 'event-integration') ?>.">
         </div>
     @endif
 
@@ -289,7 +299,8 @@
                    name="{{ $price_senior->name }}"
                    id="{{ $price_senior->name }}"
                    placeholder="{{ $price_senior->label }}"
-                    {{ $price_senior->required ? 'required' : '' }}>
+                    {{ $price_senior->required ? 'required' : '' }}
+                    data-value-missing="<?php _e("Please fill out this field", 'event-integration') ?>.">
         </div>
     @endif
 
@@ -304,7 +315,8 @@
                    name="{{ $senior_age->name }}"
                    id="{{ $senior_age->name }}"
                    placeholder="{{ $senior_age->label }}"
-                    {{ $senior_age->required ? 'required' : '' }}>
+                    {{ $senior_age->required ? 'required' : '' }}
+                    data-value-missing="<?php _e("Please fill out this field", 'event-integration') ?>.">
         </div>
     @endif
 
@@ -321,14 +333,16 @@
                 <input type="number"
                        name="age_group_from"
                        placeholder="<?php _e('From', 'event-integration'); ?>"
-                        {{ $age_group->required ? 'required' : '' }}>
+                        {{ $age_group->required ? 'required' : '' }}
+                        data-value-missing="<?php _e("Please fill out this field", 'event-integration') ?>.">
             </div>
             <div class="form-group">
                 <label for="age_group_to"><?php _e('To', 'event-integration'); ?></label>
                 <input type="number"
                        name="age_group_to"
                        placeholder="<?php _e('To', 'event-integration'); ?>"
-                        {{ $age_group->required ? 'required' : '' }}>
+                        {{ $age_group->required ? 'required' : '' }}
+                        data-value-missing="<?php _e("Please fill out this field", 'event-integration') ?>.">
             </div>
         </div>
     @endif
@@ -389,7 +403,8 @@
             <select name="{{ $event_categories->name }}"
                     id="{{ $event_categories->name }}"
                     multiple
-                    {{ $event_categories->required ? 'required' : '' }}>
+                    {{ $event_categories->required ? 'required' : '' }}
+                    data-select-missing="<?php _e("Select one option in the list", 'event-integration') ?>."
                 <option value=""><?php _e('Loading', 'event-integration'); ?>...</option>
             </select>
         </div>
@@ -405,7 +420,8 @@
             <select name="{{ $event_tags->name }}"
                     id="{{ $event_tags->name }}"
                     multiple
-                    {{ $event_tags->required ? 'required' : '' }}>
+                    {{ $event_tags->required ? 'required' : '' }}
+                    data-select-missing="<?php _e("Select one option in the list", 'event-integration') ?>.>
                 <option value=""><?php _e('Loading', 'event-integration'); ?>...</option>
             </select>
         </div>
@@ -488,7 +504,9 @@
                    name="{{ $submitter_email->name }}"
                    id="{{ $submitter_email->name }}"
                    placeholder="{{ $submitter_email->label }}"
-                    {{ $submitter_email->required ? 'required' : '' }}>
+                    {{ $submitter_email->required ? 'required' : '' }}
+                    data-type-mismatch="<?php _e("Please enter a valid email address", 'event-integration') ?>."
+                    data-value-missing="<?php _e("Please fill out this field", 'event-integration') ?>.">
         </div>
 
         <div class="form-group">
@@ -497,7 +515,9 @@
                    name="submitter_repeat_email"
                    id="submitter_repeat_email"
                    placeholder="<?php _e('Repeat email', 'event-integration'); ?>"
-                    {{ $submitter_email->required ? 'required' : '' }}>
+                    {{ $submitter_email->required ? 'required' : '' }}
+                    data-invalid-email="<?php _e("Please enter a valid email address", 'event-integration') ?>."
+                    data-value-missing="<?php _e("Please fill out this field", 'event-integration') ?>.">
         </div>
     @endif
 
