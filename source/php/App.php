@@ -217,7 +217,7 @@ class App
             'email_not_matching' => __("The email addresses does not match.", 'event-integration'),
             'must_upload_image' => __("You must upload an image.", 'event-integration'),
             'date_must_match_pattern' => __("Date must be valid (YYYY-MM-DD)", 'event-integration'),
-            'start_date_must_be_later' => __("Start date cannot be before end date", 'event-integration'),
+            'start_date_must_be_later' => __("Start date cannot be after end date", 'event-integration'),
             'end_date_must_be_later' => __("End date cannot be before start date", 'event-integration'),
         ));
         wp_enqueue_script('event-integration');
