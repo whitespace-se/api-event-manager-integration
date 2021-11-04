@@ -179,6 +179,7 @@ class OAuthRequests
         // Add consumer name to postData
         $clientUrl                   = parse_url(get_site_url());
         $postData['consumer_client'] = !empty($postData['client_name']) ? $clientUrl['host'] . ' - ' . $postData['client_name'] : $clientUrl['host'];
+        $submitterEmail              = $postData['submitter_email'];
         $postData                    = json_encode($postData);
         $consumerKey                 = get_option('_event_client');
         $consumerSecret              = get_option('_event_secret');
@@ -227,6 +228,10 @@ class OAuthRequests
         // Get Http code
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         curl_close($ch);
+
+        if ($submitterEmail) {
+            $this->sendConfirmationEmailToSubmitter($submitterEmail);
+        }
 
         // Return response
         if ($httpCode === 201) {
@@ -309,6 +314,25 @@ class OAuthRequests
         // return uploaded media id
         $resObj = json_decode($result);
         wp_send_json_success($resObj->id);
+    }
+
+    /**
+     * Send confirmation email to event submitter
+     */
+    public function sendConfirmationEmailToSubmitter($to)
+    {
+        $subject = get_field('email_confirmation_subject', 'option');
+        $body = '<html><body style="background:#fff;padding: 50px; font-family: Arial, Verdana, sans-serif;">' . get_field('email_confirmation_body', 'option') . '</body></html>';
+
+        wp_mail(
+            $to,
+            $subject,
+            $body,
+            array(
+                'Content-Type: text/html; charset=UTF-8',
+                'From: ' . get_option('admin_email'),
+            )
+        );
     }
 
     /**
