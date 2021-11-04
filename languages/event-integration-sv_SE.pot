@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Event Manager Integration\n"
-"POT-Creation-Date: 2021-11-03 14:24+0100\n"
+"POT-Creation-Date: 2021-11-04 21:51+0100\n"
 "PO-Revision-Date: 2016-12-13 15:19+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -19,6 +19,18 @@ msgstr ""
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: AcfFields/php/email-confirmation.php:6
+msgid "Email confirmation"
+msgstr ""
+
+#: AcfFields/php/email-confirmation.php:10
+msgid "Subject"
+msgstr ""
+
+#: AcfFields/php/email-confirmation.php:17
+msgid "Body"
+msgstr ""
 
 #: AcfFields/php/event-form-module.php:6
 #: source/php/Module/SubmitForm/SubmitForm.php:12
@@ -538,7 +550,7 @@ msgstr ""
 msgid "Show events that occurs at a specified location."
 msgstr ""
 
-#: AcfFields/php/event-module.php:620 AcfFields/php/options.php:310
+#: AcfFields/php/event-module.php:620 AcfFields/php/options.php:312
 msgid "Distance from location"
 msgstr ""
 
@@ -614,163 +626,163 @@ msgstr ""
 msgid "Links"
 msgstr ""
 
-#: AcfFields/php/options.php:10
+#: AcfFields/php/options.php:12
 msgid "API url"
 msgstr ""
 
-#: AcfFields/php/options.php:13
+#: AcfFields/php/options.php:15
 msgid ""
 "Url to Event Manager API wp/v2 namespace. <br> E.g. https://host/wp-json/wp/"
 "v2"
 msgstr ""
 
-#: AcfFields/php/options.php:26
+#: AcfFields/php/options.php:28
 msgid "Days ahead"
 msgstr ""
 
-#: AcfFields/php/options.php:29
+#: AcfFields/php/options.php:31
 msgid "Import events that occurs within given number of days."
 msgstr ""
 
-#: AcfFields/php/options.php:40
+#: AcfFields/php/options.php:42
 msgid "days"
 msgstr ""
 
-#: AcfFields/php/options.php:47
+#: AcfFields/php/options.php:49
 msgid "Daily import"
 msgstr ""
 
-#: AcfFields/php/options.php:58
+#: AcfFields/php/options.php:60
 msgid "Enable daily automatic import from Event Manager API"
 msgstr ""
 
-#: AcfFields/php/options.php:66
+#: AcfFields/php/options.php:68
 msgid "Post status"
 msgstr ""
 
-#: AcfFields/php/options.php:69
+#: AcfFields/php/options.php:71
 msgid "Select status of imported events."
 msgstr ""
 
-#: AcfFields/php/options.php:78
+#: AcfFields/php/options.php:80
 msgid "Draft"
 msgstr ""
 
-#: AcfFields/php/options.php:79
+#: AcfFields/php/options.php:81
 msgid "Published"
 msgstr ""
 
-#: AcfFields/php/options.php:90
+#: AcfFields/php/options.php:92
 msgid "Unpublish long lasting events"
 msgstr ""
 
-#: AcfFields/php/options.php:93
+#: AcfFields/php/options.php:95
 msgid ""
 "Automatically unpublish events lasting longer than given limit. Set to -1 to "
 "set no limit."
 msgstr ""
 
-#: AcfFields/php/options.php:111
+#: AcfFields/php/options.php:113
 msgid "Google Maps JavaScript API key"
 msgstr ""
 
-#: AcfFields/php/options.php:114
+#: AcfFields/php/options.php:116
 msgid "Needed to display Google maps."
 msgstr ""
 
-#: AcfFields/php/options.php:130
+#: AcfFields/php/options.php:132
 msgid "Visa knapp för att uppdatera importerade evenemang"
 msgstr ""
 
-#: AcfFields/php/options.php:141
+#: AcfFields/php/options.php:143
 msgid "Visa uppdatera-knapp"
 msgstr ""
 
-#: AcfFields/php/options.php:149
+#: AcfFields/php/options.php:151
 msgid "OAuth1 end point root url"
 msgstr ""
 
-#: AcfFields/php/options.php:152
+#: AcfFields/php/options.php:154
 msgid ""
 "Url can be found under section \"authentication\" in your API root.<br> E.g. "
 "https://host/oauth1<br> <br> Authorization is only needed when you want to "
 "post data to the API."
 msgstr ""
 
-#: AcfFields/php/options.php:165
+#: AcfFields/php/options.php:167
 msgid "Import filters"
 msgstr ""
 
-#: AcfFields/php/options.php:182
+#: AcfFields/php/options.php:184
 msgid "Import from selected user groups"
 msgstr ""
 
-#: AcfFields/php/options.php:185
+#: AcfFields/php/options.php:187
 msgid ""
 "Select the user groups that you want to import events from. Leave empty to "
 "import from all groups."
 msgstr ""
 
-#: AcfFields/php/options.php:204
+#: AcfFields/php/options.php:206
 msgid "Import from selected categories"
 msgstr ""
 
-#: AcfFields/php/options.php:207
+#: AcfFields/php/options.php:209
 msgid ""
 "Enter the name of the categories that you want to import events from. "
 "Separate with commas. Leave blank to import from all categories."
 msgstr ""
 
-#: AcfFields/php/options.php:223
+#: AcfFields/php/options.php:225
 msgid "Import from selected tags"
 msgstr ""
 
-#: AcfFields/php/options.php:226
+#: AcfFields/php/options.php:228
 msgid ""
 "Enter the name of the tags that you want to import events from. Separate "
 "with commas. Leave blank to import from all tags."
 msgstr ""
 
-#: AcfFields/php/options.php:242
+#: AcfFields/php/options.php:244
 msgid "Import internal events"
 msgstr ""
 
-#: AcfFields/php/options.php:245
+#: AcfFields/php/options.php:247
 msgid "Select if only internal (organization) events should be imported."
 msgstr ""
 
-#: AcfFields/php/options.php:261
+#: AcfFields/php/options.php:263
 msgid "Import from geographic location"
 msgstr ""
 
-#: AcfFields/php/options.php:273
-#: source/php/Module/SubmitForm/views/formfields.blade.php:456
+#: AcfFields/php/options.php:275
+#: source/php/Module/SubmitForm/views/formfields.blade.php:465
 msgid "No"
 msgstr ""
 
-#: AcfFields/php/options.php:274
+#: AcfFields/php/options.php:276
 msgid "Single point"
 msgstr ""
 
-#: AcfFields/php/options.php:275 AcfFields/php/options.php:339
+#: AcfFields/php/options.php:277 AcfFields/php/options.php:341
 msgid "Drawn area"
 msgstr ""
 
-#: AcfFields/php/options.php:284
+#: AcfFields/php/options.php:286
 msgid "From a single point"
 msgstr ""
 
-#: AcfFields/php/options.php:287
+#: AcfFields/php/options.php:289
 msgid "Import events that occurs at a specified location."
 msgstr ""
 
-#: AcfFields/php/options.php:313
+#: AcfFields/php/options.php:315
 msgid ""
 "To get events occurring nearby the given location, enter maximum distance in "
 "km. Leave blank to only get events from the exact position."
 msgstr ""
 
-#: AcfFields/php/options.php:358
+#: AcfFields/php/options.php:360
 msgid ""
 "Import events that occurs inside the drawn area. Draw the area by clicking "
 "each point on the map. Maximum number of points is 8."
@@ -917,76 +929,84 @@ msgstr ""
 msgid "No events could be found."
 msgstr ""
 
-#: source/php/App.php:105
+#: source/php/App.php:104
 msgid "Close"
 msgstr ""
 
-#: source/php/App.php:106
+#: source/php/App.php:105
 #: source/php/Module/Event/views/partials/list.blade.php:16
 msgid "Today"
 msgstr ""
 
-#: source/php/App.php:109 source/php/Module/Event/Event.php:381
+#: source/php/App.php:108 source/php/Module/Event/Event.php:381
 msgid "Next"
 msgstr ""
 
-#: source/php/App.php:110 source/php/Module/Event/Event.php:382
+#: source/php/App.php:109 source/php/Module/Event/Event.php:382
 msgid "Previous"
 msgstr ""
 
-#: source/php/App.php:158
-#: source/php/Module/SubmitForm/views/formfields.blade.php:399
-#: source/php/Module/SubmitForm/views/formfields.blade.php:416
+#: source/php/App.php:157
+#: source/php/Module/SubmitForm/views/formfields.blade.php:408
+#: source/php/Module/SubmitForm/views/formfields.blade.php:425
 #: views/submit-form.blade.php:182 views/submit-form.blade.php:191
 msgid "Loading"
 msgstr ""
 
-#: source/php/App.php:216
+#: source/php/App.php:215
 msgid "Something went wrong, please try again later."
 msgstr ""
 
-#: source/php/App.php:217
+#: source/php/App.php:216
 msgid "The email addresses does not match."
 msgstr ""
 
-#: source/php/App.php:218
+#: source/php/App.php:217
 msgid "You must upload an image."
 msgstr ""
 
-#: source/php/App.php:219
-#: source/php/Module/SubmitForm/views/formfields.blade.php:68
-#: source/php/Module/SubmitForm/views/formfields.blade.php:85
-#: source/php/Module/SubmitForm/views/formfields.blade.php:167
-#: source/php/Module/SubmitForm/views/formfields.blade.php:174
+#: source/php/App.php:218
+#: source/php/Module/SubmitForm/views/formfields.blade.php:71
+#: source/php/Module/SubmitForm/views/formfields.blade.php:92
+#: source/php/Module/SubmitForm/views/formfields.blade.php:176
+#: source/php/Module/SubmitForm/views/formfields.blade.php:183
 msgid "Date must be valid (YYYY-MM-DD)"
 msgstr ""
 
-#: source/php/App.php:220
+#: source/php/App.php:219
 msgid "Start date cannot be after end date"
 msgstr ""
 
-#: source/php/App.php:221
+#: source/php/App.php:220
 msgid "End date cannot be before start date"
 msgstr ""
 
-#: source/php/App.php:222
-#: source/php/Module/SubmitForm/views/formfields.blade.php:166
-#: source/php/Module/SubmitForm/views/formfields.blade.php:173
-#: source/php/Module/SubmitForm/views/formfields.blade.php:199
-#: source/php/Module/SubmitForm/views/formfields.blade.php:215
-#: source/php/Module/SubmitForm/views/formfields.blade.php:246
-#: source/php/Module/SubmitForm/views/formfields.blade.php:262
-#: source/php/Module/SubmitForm/views/formfields.blade.php:278
-#: source/php/Module/SubmitForm/views/formfields.blade.php:294
-#: source/php/Module/SubmitForm/views/formfields.blade.php:310
-#: source/php/Module/SubmitForm/views/formfields.blade.php:328
-#: source/php/Module/SubmitForm/views/formfields.blade.php:336
-#: source/php/Module/SubmitForm/views/formfields.blade.php:500
-#: source/php/Module/SubmitForm/views/formfields.blade.php:511
+#: source/php/App.php:221
+#: source/php/Module/SubmitForm/views/formfields.blade.php:24
+#: source/php/Module/SubmitForm/views/formfields.blade.php:39
+#: source/php/Module/SubmitForm/views/formfields.blade.php:70
+#: source/php/Module/SubmitForm/views/formfields.blade.php:79
+#: source/php/Module/SubmitForm/views/formfields.blade.php:84
+#: source/php/Module/SubmitForm/views/formfields.blade.php:91
+#: source/php/Module/SubmitForm/views/formfields.blade.php:100
+#: source/php/Module/SubmitForm/views/formfields.blade.php:106
+#: source/php/Module/SubmitForm/views/formfields.blade.php:175
+#: source/php/Module/SubmitForm/views/formfields.blade.php:182
+#: source/php/Module/SubmitForm/views/formfields.blade.php:208
+#: source/php/Module/SubmitForm/views/formfields.blade.php:224
+#: source/php/Module/SubmitForm/views/formfields.blade.php:255
+#: source/php/Module/SubmitForm/views/formfields.blade.php:271
+#: source/php/Module/SubmitForm/views/formfields.blade.php:287
+#: source/php/Module/SubmitForm/views/formfields.blade.php:303
+#: source/php/Module/SubmitForm/views/formfields.blade.php:319
+#: source/php/Module/SubmitForm/views/formfields.blade.php:337
+#: source/php/Module/SubmitForm/views/formfields.blade.php:345
+#: source/php/Module/SubmitForm/views/formfields.blade.php:509
+#: source/php/Module/SubmitForm/views/formfields.blade.php:520
 msgid "Please fill out this field"
 msgstr ""
 
-#: source/php/App.php:237
+#: source/php/App.php:236
 msgid "to"
 msgstr ""
 
@@ -1162,7 +1182,7 @@ msgid ""
 msgstr ""
 
 #: source/php/Helper/SubmitEvent.php:158
-#: source/php/Module/SubmitForm/views/formfields.blade.php:471
+#: source/php/Module/SubmitForm/views/formfields.blade.php:480
 #: views/submit-form.blade.php:197 views/submit-form.blade.php:207
 #: views/submit-form.blade.php:220
 msgid "Upload an image"
@@ -1212,16 +1232,16 @@ msgid "Search"
 msgstr ""
 
 #: source/php/Module/Event/Event.php:384
-#: source/php/Module/SubmitForm/views/formfields.blade.php:323
-#: source/php/Module/SubmitForm/views/formfields.blade.php:326
+#: source/php/Module/SubmitForm/views/formfields.blade.php:332
+#: source/php/Module/SubmitForm/views/formfields.blade.php:335
 #: source/php/PostTypes/Events.php:141
 #: source/php/Shortcodes/SingleEvent.php:340
 msgid "From"
 msgstr ""
 
 #: source/php/Module/Event/Event.php:385
-#: source/php/Module/SubmitForm/views/formfields.blade.php:331
-#: source/php/Module/SubmitForm/views/formfields.blade.php:334
+#: source/php/Module/SubmitForm/views/formfields.blade.php:340
+#: source/php/Module/SubmitForm/views/formfields.blade.php:343
 msgid "To"
 msgstr ""
 
@@ -1288,206 +1308,206 @@ msgstr ""
 msgid "Displays an event submit form"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:51
-#: source/php/Module/SubmitForm/views/formfields.blade.php:63
+#: source/php/Module/SubmitForm/views/formfields.blade.php:52
+#: source/php/Module/SubmitForm/views/formfields.blade.php:64
 #: views/submit-form.blade.php:29 views/submit-form.blade.php:39
 msgid "Single occurrence"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:55
+#: source/php/Module/SubmitForm/views/formfields.blade.php:56
 #: views/submit-form.blade.php:32
 msgctxt "Event recurrence rules"
 msgid "Schedule"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:67
-#: source/php/Module/SubmitForm/views/formfields.blade.php:163
+#: source/php/Module/SubmitForm/views/formfields.blade.php:68
+#: source/php/Module/SubmitForm/views/formfields.blade.php:172
 #: views/submit-form.blade.php:43 views/submit-form.blade.php:124
 #: views/submit-form.blade.php:126
 msgid "Start date"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:68
-#: source/php/Module/SubmitForm/views/formfields.blade.php:85
-#: source/php/Module/SubmitForm/views/formfields.blade.php:165
-#: source/php/Module/SubmitForm/views/formfields.blade.php:172
+#: source/php/Module/SubmitForm/views/formfields.blade.php:69
+#: source/php/Module/SubmitForm/views/formfields.blade.php:89
+#: source/php/Module/SubmitForm/views/formfields.blade.php:174
+#: source/php/Module/SubmitForm/views/formfields.blade.php:181
 msgid "YYYY-MM-DD"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:71
-#: source/php/Module/SubmitForm/views/formfields.blade.php:138
+#: source/php/Module/SubmitForm/views/formfields.blade.php:74
+#: source/php/Module/SubmitForm/views/formfields.blade.php:147
 #: views/submit-form.blade.php:47 views/submit-form.blade.php:104
 msgid "Start time"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:84
-#: source/php/Module/SubmitForm/views/formfields.blade.php:170
+#: source/php/Module/SubmitForm/views/formfields.blade.php:88
+#: source/php/Module/SubmitForm/views/formfields.blade.php:179
 #: views/submit-form.blade.php:57 views/submit-form.blade.php:130
 #: views/submit-form.blade.php:132
 msgid "End date"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:88
-#: source/php/Module/SubmitForm/views/formfields.blade.php:151
+#: source/php/Module/SubmitForm/views/formfields.blade.php:95
+#: source/php/Module/SubmitForm/views/formfields.blade.php:160
 #: views/submit-form.blade.php:61 views/submit-form.blade.php:114
 msgid "End time"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:103
+#: source/php/Module/SubmitForm/views/formfields.blade.php:112
 msgid "Add more dates"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:114
+#: source/php/Module/SubmitForm/views/formfields.blade.php:123
 #: views/submit-form.blade.php:82
 msgid "Recurrence rules for weekly recurring event"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:118
+#: source/php/Module/SubmitForm/views/formfields.blade.php:127
 #: views/submit-form.blade.php:86
 msgid "Weekday"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:120
+#: source/php/Module/SubmitForm/views/formfields.blade.php:129
 #: views/submit-form.blade.php:87
 msgid "The event will occur on this weekday."
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:122
+#: source/php/Module/SubmitForm/views/formfields.blade.php:131
 #: views/submit-form.blade.php:89
 msgid "Monday"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:123
+#: source/php/Module/SubmitForm/views/formfields.blade.php:132
 #: views/submit-form.blade.php:90
 msgid "Tuesday"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:124
+#: source/php/Module/SubmitForm/views/formfields.blade.php:133
 #: views/submit-form.blade.php:91
 msgid "Wednesday"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:125
+#: source/php/Module/SubmitForm/views/formfields.blade.php:134
 #: views/submit-form.blade.php:92
 msgid "Thursday"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:126
+#: source/php/Module/SubmitForm/views/formfields.blade.php:135
 #: views/submit-form.blade.php:93
 msgid "Friday"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:127
+#: source/php/Module/SubmitForm/views/formfields.blade.php:136
 #: views/submit-form.blade.php:94
 msgid "Saturday"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:128
+#: source/php/Module/SubmitForm/views/formfields.blade.php:137
 #: views/submit-form.blade.php:95
 msgid "Sunday"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:132
-#: source/php/Module/SubmitForm/views/formfields.blade.php:135
+#: source/php/Module/SubmitForm/views/formfields.blade.php:141
+#: source/php/Module/SubmitForm/views/formfields.blade.php:144
 #: views/submit-form.blade.php:99 views/submit-form.blade.php:101
 msgid "Weekly interval"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:133
+#: source/php/Module/SubmitForm/views/formfields.blade.php:142
 #: views/submit-form.blade.php:100
 msgid "Enter the weekly interval when the event occurs. 1 equals every week."
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:140
+#: source/php/Module/SubmitForm/views/formfields.blade.php:149
 #: views/submit-form.blade.php:105
 msgid "Start time for the event"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:153
+#: source/php/Module/SubmitForm/views/formfields.blade.php:162
 #: views/submit-form.blade.php:115
 msgid "End time for the event"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:164
+#: source/php/Module/SubmitForm/views/formfields.blade.php:173
 #: views/submit-form.blade.php:125
 msgid "When the recurring event period starts"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:171
+#: source/php/Module/SubmitForm/views/formfields.blade.php:180
 #: views/submit-form.blade.php:131
 msgid "When the recurring event period ends"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:179
+#: source/php/Module/SubmitForm/views/formfields.blade.php:188
 #: views/submit-form.blade.php:72 views/submit-form.blade.php:138
 msgid "Add"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:378
+#: source/php/Module/SubmitForm/views/formfields.blade.php:387
 msgid "Elevator/ramp"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:382
+#: source/php/Module/SubmitForm/views/formfields.blade.php:391
 msgid "Accessible toilet"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:398
-#: source/php/Module/SubmitForm/views/formfields.blade.php:415
+#: source/php/Module/SubmitForm/views/formfields.blade.php:407
+#: source/php/Module/SubmitForm/views/formfields.blade.php:424
 msgid "Select one option in the list"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:439
+#: source/php/Module/SubmitForm/views/formfields.blade.php:448
 #: views/submit-form.blade.php:211
 msgid "Before you can upload an image, you need to confirm the following terms"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:444
+#: source/php/Module/SubmitForm/views/formfields.blade.php:453
 #: views/submit-form.blade.php:213
 msgid "I have the right to use this image to promote this event."
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:448
+#: source/php/Module/SubmitForm/views/formfields.blade.php:457
 msgid "Are there identifiable persons on the image/images?"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:453
+#: source/php/Module/SubmitForm/views/formfields.blade.php:462
 msgid "Yes"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:464
+#: source/php/Module/SubmitForm/views/formfields.blade.php:473
 msgid ""
 "They have accepted that the image is used to promote this event and have "
 "been informed that after the image has been added to the database, it may "
 "appear in different channels to promote the event."
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:482
+#: source/php/Module/SubmitForm/views/formfields.blade.php:491
 #: views/submit-form.blade.php:225
 msgid "Contact details"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:483
+#: source/php/Module/SubmitForm/views/formfields.blade.php:492
 #: views/submit-form.blade.php:226
 msgid "Enter your contact details below for eventual questions."
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:499
-#: source/php/Module/SubmitForm/views/formfields.blade.php:510
+#: source/php/Module/SubmitForm/views/formfields.blade.php:508
+#: source/php/Module/SubmitForm/views/formfields.blade.php:519
 msgid "Please enter a valid email address"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:504
-#: source/php/Module/SubmitForm/views/formfields.blade.php:508
+#: source/php/Module/SubmitForm/views/formfields.blade.php:513
+#: source/php/Module/SubmitForm/views/formfields.blade.php:517
 #: views/submit-form.blade.php:233 views/submit-form.blade.php:234
 msgid "Repeat email"
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:532
+#: source/php/Module/SubmitForm/views/formfields.blade.php:541
 #: views/submit-form.blade.php:242
 msgid "Done? Click here to submit your event for review."
 msgstr ""
 
-#: source/php/Module/SubmitForm/views/formfields.blade.php:542
+#: source/php/Module/SubmitForm/views/formfields.blade.php:551
 #: views/submit-form.blade.php:252
 msgid "Send"
 msgstr ""
@@ -1580,16 +1600,24 @@ msgstr ""
 msgid "Form data is missing, please try again."
 msgstr ""
 
-#: source/php/OAuth/OAuthRequests.php:237
+#: source/php/OAuth/OAuthRequests.php:242
 msgid "Something went wrong posting the event"
 msgstr ""
 
-#: source/php/OAuth/OAuthRequests.php:247
+#: source/php/OAuth/OAuthRequests.php:252
 msgid "Image is not selected, please try again."
 msgstr ""
 
-#: source/php/OAuth/OAuthRequests.php:306
+#: source/php/OAuth/OAuthRequests.php:311
 msgid "Something went wrong uploading your image"
+msgstr ""
+
+#: source/php/OAuth/OAuthRequests.php:324
+msgid "Thank you for submitting an event to"
+msgstr ""
+
+#: source/php/OAuth/OAuthRequests.php:325
+msgid "Your submission will now be reviewed our team"
 msgstr ""
 
 #: source/php/Parser.php:79
