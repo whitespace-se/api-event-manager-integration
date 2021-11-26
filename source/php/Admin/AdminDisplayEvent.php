@@ -188,23 +188,13 @@ class AdminDisplayEvent extends \EventManagerIntegration\PostTypes\Events
      */
     public function eventGallery($object, $box)
     {
-        $id = $object->ID;
-        $args = array(
-            'post_parent'    => $id,
-            'post_type'      => 'attachment',
-            'numberposts'    => -1,
-            'post_status'    => 'any',
-            'post_mime_type' => 'image',
-            'orderby'        => 'menu_order',
-            'order'           => 'ASC'
-        );
-
-        $images = get_posts($args);
-
-        if ($images) {
-            foreach($images as $image) {
-                echo wp_get_attachment_image($image->ID, array('300', '200'), '');
-            }
+        $value = get_post_meta($object->ID, 'event_gallery', true);
+        $gallery = [];
+        if ( ! empty( $value ) && is_array( $value ) ) {
+          foreach ( $value as $image ) {
+            $post_object = get_post( (int) $image );
+            echo wp_get_attachment_image($post_object->ID, array('300', '200'), '');
+          }
         }
     }
 
