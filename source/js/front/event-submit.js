@@ -52,9 +52,7 @@ export default (() => {
        */
 
       // Validate all dates
-      $(
-        "input[pattern='[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])'].date-picker"
-      ).each(function (_, element) {
+      $("input.date-picker").each(function (_, element) {
         hyperform.addValidator(element, function (element) {
           if (
             element.validity.patternMismatch ||
