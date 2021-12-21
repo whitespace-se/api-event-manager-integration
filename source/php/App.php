@@ -219,6 +219,7 @@ class App
             'start_date_must_be_later' => __("Start date cannot be after end date", 'event-integration'),
             'end_date_must_be_later' => __("End date cannot be before start date", 'event-integration'),
             'value_missing' => __("Please fill out this field", 'event-integration'),
+            'date_older_than_today' => __("Date cannot be older than today's date", "event-integration"),
         ));
         wp_enqueue_script('event-integration');
     }

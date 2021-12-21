@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Event Manager Integration\n"
-"POT-Creation-Date: 2021-11-04 21:52+0100\n"
-"PO-Revision-Date: 2021-11-04 21:53+0100\n"
+"POT-Creation-Date: 2021-12-21 11:39+0100\n"
+"PO-Revision-Date: 2021-12-21 11:40+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: event-manager-integration.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -941,7 +941,7 @@ msgstr "Bokning"
 msgid "Taxonomies"
 msgstr "Taxonomier"
 
-#: source/php/Admin/AdminDisplayEvent.php:221
+#: source/php/Admin/AdminDisplayEvent.php:211
 msgid "Image missing"
 msgstr "Bild saknas"
 
@@ -1042,7 +1042,11 @@ msgstr "Slutdatumet kan inte vara före startdatumet"
 msgid "Please fill out this field"
 msgstr "Fyll i det här fältet"
 
-#: source/php/App.php:236
+#: source/php/App.php:222
+msgid "Date cannot be older than today's date"
+msgstr "Datumet kan inte vara bakåt i tiden"
+
+#: source/php/App.php:237
 msgid "to"
 msgstr "till"
 
@@ -1675,14 +1679,6 @@ msgstr "Bild saknas, vänligen försök igen."
 #: source/php/OAuth/OAuthRequests.php:311
 msgid "Something went wrong uploading your image"
 msgstr "Något gick fel med att ladda upp din bild"
-
-#: source/php/OAuth/OAuthRequests.php:324
-msgid "Thank you for submitting an event to"
-msgstr ""
-
-#: source/php/OAuth/OAuthRequests.php:325
-msgid "Your submission will now be reviewed our team"
-msgstr ""
 
 #: source/php/Parser.php:79
 msgid "API request failed."
