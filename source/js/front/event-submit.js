@@ -50,8 +50,11 @@ export default (() => {
       /**
        * Add custom validations with Hyperform
        */
-      // Validate all start dates
-      $("input[name*='start_d'].date-picker").each(function (_, element) {
+
+      // Validate all dates
+      $(
+        "input[pattern='[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])'].date-picker"
+      ).each(function (_, element) {
         hyperform.addValidator(element, function (element) {
           if (
             element.validity.patternMismatch ||
@@ -60,6 +63,23 @@ export default (() => {
             return false;
           }
 
+          const today = new Date();
+          const date = new Date(element.value);
+          today.setHours(0, 0, 0, 0);
+          date.setHours(0, 0, 0, 0);
+          const valid = date >= today;
+
+          element.setCustomValidity(
+            valid ? "" : eventIntegrationFront.date_older_than_today
+          );
+
+          return valid;
+        });
+      });
+
+      // Validate all start dates
+      $("input[name*='start_d'].date-picker").each(function (_, element) {
+        hyperform.addValidator(element, function (element) {
           const $associatedEndDate = $(element)
             .closest(".occurrence")
             .find("input[name*='end_d'].date-picker");
@@ -70,6 +90,8 @@ export default (() => {
 
           const start = new Date(element.value);
           const end = new Date($associatedEndDate.val());
+          start.setHours(0, 0, 0, 0);
+          end.setHours(0, 0, 0, 0);
           const valid = !element.value || start <= end;
 
           element.setCustomValidity(
@@ -83,13 +105,6 @@ export default (() => {
       // Validate all end dates
       $("input[name*='end_d'].date-picker").each(function (_, element) {
         hyperform.addValidator(element, function (element) {
-          if (
-            element.validity.patternMismatch ||
-            element.validity.valueMissing
-          ) {
-            return false;
-          }
-
           const $associatedStartDate = $(element)
             .closest(".occurrence")
             .find("input[name*='start_d'].date-picker");
@@ -100,6 +115,8 @@ export default (() => {
 
           const start = new Date(element.value);
           const end = new Date($associatedStartDate.val());
+          start.setHours(0, 0, 0, 0);
+          end.setHours(0, 0, 0, 0);
           const valid = !element.value || start >= end;
 
           element.setCustomValidity(
