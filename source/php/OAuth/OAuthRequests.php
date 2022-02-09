@@ -343,8 +343,8 @@ class OAuthRequests
      */
     public function sendNotificationEmails($eventTitle)
     {
-        $subject = 'Ett nytt evenemang har skickats in';
-        $body = '<html><body style="background:#fff;padding: 50px; font-family: Arial, Verdana, sans-serif;">Ett nytt evenemang med namnet '.$eventTitle.' har skickats in '.date('Y-m-d H:i').'<br/>Logga in i evenemangsdatabasen på https://api.helsingborg.se/event/wp-login.php</body></html>';
+        $subject = __('A new event has been submitted', 'event-integration');
+        $body = '<html><body style="background:#fff;padding: 50px; font-family: Arial, Verdana, sans-serif;">'.sprintf(__('A new event was submitted on %s with the name %s<br/>Please log into the event database at %s to process the submission.', 'event-manager'), $eventTitle, date('Y-m-d H:i'), 'https://api.helsingborg.se/event/wp-login.php').'</body></html>';
 
         $summaries = get_field('event_form_summaries', 'option');
         if (count($summaries) === 0) {

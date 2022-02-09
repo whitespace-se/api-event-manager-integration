@@ -2315,36 +2315,44 @@ msgstr ""
 #~ msgid "Door time: %s"
 #~ msgstr "Lokalen öppnar: %s"
 
-#: languages/event-form-summaries.php:6
+#: AcfFields/php/event-form-summaries.php:6
 msgid "Summaries"
 msgstr "Sammanfattningar"
 
-#: languages/event-form-summaries.php:24
+#: AcfFields/php/event-form-summaries.php:24
 #: source/php/Form.php:58
 msgid "Email address"
 msgstr "E-postadress"
 
-#: languages/event-form-summaries.php:10
+#: AcfFields/php/event-form-summaries.php:10
 msgid "Send summaries to"
 msgstr "Skicka summering till"
 
-#: languages/event-form-summaries.php:13
+#: AcfFields/php/event-form-summaries.php:13
 msgid "Send summaries of event submissions to the following email addresses"
 msgstr ""
 "Skicka daglig sammanfattning av inskickad evenemang till följande e-postadresser"
 
-#: languages/event-form-summaries.php:56
+#: AcfFields/php/event-form-summaries.php:56
 msgid "Monthly"
 msgstr "Månadsvis"
 
-#: languages/event-form-summaries.php:57
+#: AcfFields/php/event-form-summaries.php:57
 msgid "Weekly"
 msgstr "Veckovis"
 
-#: languages/event-form-summaries.php:58
+#: AcfFields/php/event-form-summaries.php:58
 msgid "Daily"
 msgstr "Dagligen"
 
-#: languages/event-form-summaries.php:42
+#: AcfFields/php/event-form-summaries.php:42
 msgid "Interval"
 msgstr "Intervall"
+
+#: source/php/OAuth/OAuthRequests.php:347
+msgid "A new event was submitted on %s with the name %s<br/>Please log into the event database at %s to process the submission."
+msgstr "Ett nytt evenemang med namnet %s har skickats in %s<br/>Logga in i evenemangsdatabasen på %s"
+
+#: source/php/OAuth/OAuthRequests.php:346
+msgid "A new event has been submitted"
+msgstr "Ett nytt evenemang har skickats in"
