@@ -176,6 +176,7 @@ class OAuthRequests
         }
 
         $postData                    = $this->sanitizeInput($_POST['data']);
+        $eventTitle = $postData['title'];
         // Add consumer name to postData
         $clientUrl                   = parse_url(get_site_url());
         $postData['consumer_client'] = !empty($postData['client_name']) ? $clientUrl['host'] . ' - ' . $postData['client_name'] : $clientUrl['host'];
@@ -232,6 +233,8 @@ class OAuthRequests
         if ($submitterEmail) {
             $this->sendConfirmationEmailToSubmitter($submitterEmail);
         }
+
+        $this->sendNotificationEmails($eventTitle);
 
         // Return response
         if ($httpCode === 201) {
@@ -333,6 +336,31 @@ class OAuthRequests
                 'From: ' . get_option('admin_email'),
             )
         );
+    }
+
+    /**
+     * Send notification emails
+     */
+    public function sendNotificationEmails($eventTitle)
+    {
+        $subject = 'Ett nytt evenemang har skickats in';
+        $body = '<html><body style="background:#fff;padding: 50px; font-family: Arial, Verdana, sans-serif;">Ett nytt evenemang med namnet '.$eventTitle.' har skickats in '.date('Y-m-d H:i').'<br/>Logga in i evenemangsdatabasen på https://api.helsingborg.se/event/wp-login.php</body></html>';
+
+        $summaries = get_field('event_form_summaries', 'option');
+        if (count($summaries) === 0) {
+            return;
+        }
+        foreach ($summaries as $summary) {
+            wp_mail(
+                $summary['email_address'],
+                $subject,
+                $body,
+                array(
+                    'Content-Type: text/html; charset=UTF-8',
+                    'From: ' . get_option('admin_email'),
+                )
+            );
+        }
     }
 
     /**

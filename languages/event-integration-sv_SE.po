@@ -2314,3 +2314,37 @@ msgstr ""
 
 #~ msgid "Door time: %s"
 #~ msgstr "Lokalen öppnar: %s"
+
+#: languages/event-form-summaries.php:6
+msgid "Summaries"
+msgstr "Sammanfattningar"
+
+#: languages/event-form-summaries.php:24
+#: source/php/Form.php:58
+msgid "Email address"
+msgstr "E-postadress"
+
+#: languages/event-form-summaries.php:10
+msgid "Send summaries to"
+msgstr "Skicka summering till"
+
+#: languages/event-form-summaries.php:13
+msgid "Send summaries of event submissions to the following email addresses"
+msgstr ""
+"Skicka daglig sammanfattning av inskickad evenemang till följande e-postadresser"
+
+#: languages/event-form-summaries.php:56
+msgid "Monthly"
+msgstr "Månadsvis"
+
+#: languages/event-form-summaries.php:57
+msgid "Weekly"
+msgstr "Veckovis"
+
+#: languages/event-form-summaries.php:58
+msgid "Daily"
+msgstr "Dagligen"
+
+#: languages/event-form-summaries.php:42
+msgid "Interval"
+msgstr "Intervall"
