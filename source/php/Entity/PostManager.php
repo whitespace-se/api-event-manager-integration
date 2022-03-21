@@ -284,19 +284,31 @@ abstract class PostManager
 
             // Move to real extension
             $filePath = $uploadDir . '/' . $filename . '.' . $filetype;
+            // Check if image already exists in library
+            $attachmentId = $this->attachmentExists($filePath);
+            $attachmentArgs = [
+                'guid' => $filePath,
+                'post_mime_type' => $mimeFileType,
+                'post_title' => $filename,
+                'post_content' => '',
+                'post_status' => 'inherit',
+                'post_parent' => $this->ID
+            ];
+            if ($attachmentId !== false) {
+                $newImageHash = md5($imgContent);
+                $localImageHash = md5_file($filePath);
+                // Test if the new image and the local has changed
+                if ($newImageHash !== $localImageHash) {
+                    // accordingly to wp_insert_attachment set the ID in order to signal update of existing media
+                    $attachmentArgs['ID'] = $attachmentId;
+                }
+            }
             rename($uploadDir . '/' . $filenameTemp, $filePath);
 
             // Insert the file to media library
             $attachmentId = wp_insert_attachment(
-                array(
-                    'guid' => $filePath,
-                    'post_mime_type' => $mimeFileType,
-                    'post_title' => $filename,
-                    'post_content' => '',
-                    'post_status' => 'inherit',
-                    'post_parent' => $this->ID
-                ), 
-                $filePath, 
+                $attachmentArgs,
+                $filePath,
                 $this->ID
             );
 
@@ -349,6 +361,24 @@ abstract class PostManager
     {
         if (is_string($url) && preg_match('/^(?:[;\/?:@&=+$,]|(?:[^\W_]|[-_.!~*\()\[\] ])|(?:%[\da-fA-F]{2}))*$/', $url)) {
             return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Checks if a attachment src already exists in media library
+     * @param  string $src Media url
+     * @return mixed
+     */
+    private function attachmentExists($src)
+    {
+        global $wpdb;
+        $query = "SELECT ID FROM {$wpdb->posts} WHERE guid = '$src'";
+        $id = $wpdb->get_var($query);
+
+        if (!empty($id) && $id > 0) {
+            return $id;
         }
 
         return false;
