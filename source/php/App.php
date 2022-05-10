@@ -200,6 +200,7 @@ class App
             EVENTMANAGERINTEGRATION_URL . '/dist/' . Helper\CacheBust::name('js/event-integration-front.js'),
             [
                 'jquery',
+                'jquery-ui-core',
                 'jquery-ui-datepicker',
                 'hyperform',
             ],
