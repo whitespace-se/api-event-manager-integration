@@ -47,6 +47,13 @@ export default (() => {
     Form.prototype.initHyperform = function (eventForm) {
       hyperform(eventForm);
 
+      const isFieldVisible = function(element) {
+        const $occuranceType = $('input[name="occurance-type"]:checked');
+        const selectedType = $occuranceType.data('id');
+        const isVisible = $(element).parents('#' + selectedType).length > 0;
+        return isVisible;
+      }
+
       /**
        * Add custom validations with Hyperform
        */
@@ -54,6 +61,10 @@ export default (() => {
       // Validate all dates
       $("input.date-picker").each(function (_, element) {
         hyperform.addValidator(element, function (element) {
+          if (!isFieldVisible(element)) {
+            return true;
+          }
+
           if (
             element.validity.patternMismatch ||
             element.validity.valueMissing
@@ -70,7 +81,6 @@ export default (() => {
           element.setCustomValidity(
             valid ? "" : eventIntegrationFront.date_older_than_today
           );
-
           return valid;
         });
       });
@@ -78,6 +88,9 @@ export default (() => {
       // Validate all start dates
       $("input[name*='start_d'].date-picker").each(function (_, element) {
         hyperform.addValidator(element, function (element) {
+          if (!isFieldVisible(element)) {
+            return true;
+          }
           const $associatedEndDate = $(element)
             .closest(".occurrence")
             .find("input[name*='end_d'].date-picker");
@@ -103,6 +116,9 @@ export default (() => {
       // Validate all end dates
       $("input[name*='end_d'].date-picker").each(function (_, element) {
         hyperform.addValidator(element, function (element) {
+          if (!isFieldVisible(element)) {
+            return true;
+          }
           const $associatedStartDate = $(element)
             .closest(".occurrence")
             .find("input[name*='start_d'].date-picker");

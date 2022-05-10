@@ -98,7 +98,7 @@
                     <div class="form-group">
                         <label for="weekly_interval"><?php _e('Weekly interval', 'event-integration'); ?></label>
                         <small class="text-dark-gray"><?php _e('Enter the weekly interval when the event occurs. 1 equals every week.', 'event-integration'); ?></small>
-                        <input type="number" name="weekly_interval" id="weekly_interval" min="1" max="52" value="1" placeholder="<?php _e('Weekly interval', 'event-integration'); ?> required">
+                        <input type="number" name="weekly_interval" id="weekly_interval" min="1" max="52" value="1" placeholder="<?php _e('Weekly interval', 'event-integration'); ?>">
                     </div>
                     <div class="form-group form-horizontal">
                         <label for="recurring_start_h"><?php _e('Start time', 'event-integration'); ?> <span class="text-danger">*</span></label>
