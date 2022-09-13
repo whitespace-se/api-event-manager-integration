@@ -251,7 +251,7 @@ abstract class PostManager
         }
 
         //Get slug & validate that post exists
-        if(is_string(get_post_status($this->ID)) && $filename = get_post($this->ID)->slug) {
+        if(is_string(get_post_status($this->ID)) && $filename = $this->slug) {
 
             $mimes = new \Mimey\MimeTypes;
 
