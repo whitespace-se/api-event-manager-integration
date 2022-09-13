@@ -86,6 +86,7 @@ class EventManagerApi extends \EventManagerIntegration\Parser
     public function saveEvent($event)
     {
         $post_title                     = !empty($event['title']['rendered']) ? $event['title']['rendered'] : null;
+        $slug                           = $event['slug'] ?? null;
         $post_content                   = !empty($event['content']['rendered']) ? $event['content']['rendered'] : null;
         $featured_media                 = !empty($event['featured_media']['source_url']) ? $event['featured_media']['source_url'] : null;
         $categories                     = !empty($event['event_categories']) ? $this->sanitizeCategories($event['event_categories']) : array();
@@ -171,6 +172,7 @@ class EventManagerApi extends \EventManagerIntegration\Parser
                 $event = new Event(
                     array(
                         'post_title' => $post_title,
+                        'slug' => $slug,
                         'post_content' => $post_content,
                         'post_status' => $post_status,
                     ),

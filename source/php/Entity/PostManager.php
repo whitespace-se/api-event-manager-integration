@@ -29,7 +29,7 @@ abstract class PostManager
         'comment_status',
         'ping_status',
         'post_password',
-        'post_name',
+        'slug',
         'to_ping',
         'pinged',
         'post_modified',
@@ -251,7 +251,7 @@ abstract class PostManager
         }
 
         //Get slug & validate that post exists
-        if(is_string(get_post_status($this->ID)) && $filename = get_post($this->ID)->post_name) {
+        if(is_string(get_post_status($this->ID)) && $filename = get_post($this->ID)->slug) {
 
             $mimes = new \Mimey\MimeTypes;
 
