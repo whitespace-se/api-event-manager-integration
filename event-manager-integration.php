@@ -18,16 +18,6 @@ if (! defined('WPINC')) {
     die;
 }
 
-// Require composer dependencies (autoloader)
-if (file_exists(__DIR__ . '/vendor/autoload.php')) {
-    require_once __DIR__ . '/vendor/autoload.php';
-}
-
-// Include vendor files
-if (file_exists(dirname(ABSPATH) . '/vendor/autoload.php')) {
-    require_once dirname(ABSPATH) . '/vendor/autoload.php';
-}
-
 define('EVENTMANAGERINTEGRATION_ID', '0.6.6');
 define('EVENTMANAGERINTEGRATION_PATH', plugin_dir_path(__FILE__));
 define('EVENTMANAGERINTEGRATION_URL', plugins_url('', __FILE__));
