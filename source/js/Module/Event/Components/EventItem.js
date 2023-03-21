@@ -2,24 +2,34 @@ import PropTypes from 'prop-types';
 
 const EventItem = ({ event, gridColumn, displayFields }) => (
   <div className={`u-flex ${gridColumn}`}>
-    <a className="c-card c-card--action u-text-center" href={event.permalink}>
+    <a href={event.permalink} class="box box--panel box--news" data-equal-item>
+      <div class="box__date-event-holder box__date-event-holder--primary">
+          <time class="box__date-event box__date-event--primary" datetime={event.occasion}>
+              <span class="box__date-event-month box__date-event-month--primary">{event.month}</span>
+              <span class="box__date-event-day box__date-event-day--primary">{event.day}</span>
+          </time>
+      </div>
       {displayFields.includes('image') && event.image_url && (
         <img className="c-card__image" src={event.image_url} alt={event.post_title} />
       )}
-
-      <div className="c-card__body">
-        {displayFields.includes('occasion') && event.occasion && (
-          <div className="c-card__time u-mb-2">
-            <time>{event.occasion}</time>
-          </div>
-        )}
-
-        {event.post_title && <h4 className="c-card__title">{event.post_title}</h4>}
-
+      <div class="box__content">
+        {event.post_title && <h4 className="link-item link-item-light">{event.post_title}</h4>}
         {displayFields.includes('location') && event.location && (
-          <span className="c-card__sub o-text-small">{event.location}</span>
-        )}
+        <div class="box__event-location">
+          <div class="info__box">
+            <div class="icon icon--small icon--location">{event.location}</div>
+          </div>
+        </div>)}
+        {displayFields.includes('occasion') && event.occasion && (
+        <div class="box__event-location">
+          <div class="info__box">
+            <div class="icon icon--small icon--calendar"></div>
+              <div class="text">{event.occasion}</div>
+            </div>
+        </div>)}
+        <p>{event.excerpt}</p>
       </div>
+      <div class="post__arrow"></div>
     </a>
   </div>
 );
@@ -28,6 +38,7 @@ EventItem.propTypes = {
   displayFields: PropTypes.array,
   event: PropTypes.object.isRequired,
   gridColumn: PropTypes.string,
+  
 };
 
 EventItem.defaultProps = {
