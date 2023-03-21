@@ -262,7 +262,12 @@ class Events
 
             // Format occasion date
             $event->occasion = \EventManagerIntegration\App::formatEventDate($event->start_date, $event->end_date);
-
+            $event->month = date("M", strtotime($event->start_date));
+            $event->day = date("d", strtotime($event->start_date));
+            
+            // Fix excerpt
+            $event->excerpt = wp_trim_words(wp_strip_all_tags(strip_shortcodes(get_extended($event->post_content)['main'])), 16, null);
+            $event->excerpt = str_replace('&hellip;', '...', $event->excerpt);
             // Set location
             $location = get_post_meta($event->ID, 'location', true);
             $event->location = !empty($location['title']) ? $location['title'] : null;
