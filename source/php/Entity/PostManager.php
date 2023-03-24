@@ -202,8 +202,14 @@ abstract class PostManager
             );
         }
 
+        $should_delete = empty($this->occasions_complete);
+
         // Update if duplicate
         if (isset($duplicate->ID)) {
+            if($should_delete) {
+                wp_delete_post($duplicate->ID, true);
+                return false;
+            }
             //Check if event needs to be updated
             if (get_post_meta($duplicate->ID, 'last_update', true) != $meta['last_update']) {
                 $post['ID'] = $duplicate->ID;
@@ -213,6 +219,9 @@ abstract class PostManager
                 return false;
             }
         } else {
+            if($should_delete) {
+                return false;
+            }
             // Create if not duplicate
             $this->ID = wp_insert_post($post, true);
         }
