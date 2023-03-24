@@ -142,8 +142,6 @@ class Event extends Entity\PostManager
 
         // Remove post if occasions is missing
         if ($this->occasions_complete == null || empty($this->occasions_complete)) {
-            wp_delete_post($this->ID, true);
-
             return false;
         }
 
