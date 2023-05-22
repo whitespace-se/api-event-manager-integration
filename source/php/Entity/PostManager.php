@@ -280,7 +280,7 @@ abstract class PostManager
 
             // Detect file type
             $filetype = $mimes->getExtension(
-                $mimeFileType = mime_content_type($uploadDir . '/' . $filenameTemp);
+                $mimeFileType = mime_content_type($uploadDir . '/' . $filenameTemp)
             );
 
             // Move to real extension
