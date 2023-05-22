@@ -253,8 +253,8 @@ abstract class PostManager
         //Get slug & validate that post exists
         if(is_string(get_post_status($this->ID)) && $filename = $this->slug) {
 
-            // "elephox/mimey": "^2.1" from composer
             // $mimes = new \Elephox\MimeTypes;
+            $mimes = new \Mimey\MimeTypes;
 
             //Temp name
             $filenameTemp = $filename . ".tmp"; 
@@ -279,10 +279,9 @@ abstract class PostManager
             fclose($tempStoreFile);
 
             // Detect file type
-            // $filetype = $mimes->getExtension(
-                // $mimeFileType = mime_content_type($uploadDir . '/' . $filenameTemp)
-                $mimeFileType = mime_content_type($uploadDir . '/' . $filename);
-            // );
+            $filetype = $mimes->getExtension(
+                $mimeFileType = mime_content_type($uploadDir . '/' . $filenameTemp);
+            );
 
             // Move to real extension
             $filePath = $uploadDir . '/' . $filename . '.' . $filetype;
