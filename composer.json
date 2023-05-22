@@ -18,7 +18,7 @@
     "require": {
         "helsingborg-stad/acf-export-manager": ">=1.0.0",
         "philo/laravel-blade": "^3.1",
-        "elephox/mimey": "^4.0"
+        "elephox/mimey": "^2.1"
     },
     "config": {
         "allow-plugins": {
