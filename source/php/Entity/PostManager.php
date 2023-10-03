@@ -262,7 +262,7 @@ abstract class PostManager
         //Get slug & validate that post exists
         if(is_string(get_post_status($this->ID)) && $filename = $this->slug) {
 
-            $mimes = new \Elephox\MimeTypes;
+            $mimes = new \Elephox\Mimey\MimeTypes;
 
             //Temp name
             $filenameTemp = $filename . ".tmp"; 
